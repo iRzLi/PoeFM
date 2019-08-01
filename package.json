@@ -1,24 +1,26 @@
 {
-  "name": "learn_poe_trade_api",
+  "name": "poefm",
   "version": "1.0.0",
   "description": "Learning to use Path of Exiles api",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "server": "nodemon app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iRzLi/learn_poe_trade_api.git"
+    "url": "git+https://github.com/iRzLi/PoeFM.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iRzLi/learn_poe_trade_api/issues"
+    "url": "https://github.com/iRzLi/PoeFM/issues"
   },
-  "homepage": "https://github.com/iRzLi/learn_poe_trade_api#readme",
+  "homepage": "https://github.com/iRzLi/PoeFM#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
