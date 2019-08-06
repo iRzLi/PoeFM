@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Root from './components/root';
 import axios from "axios";
+import configureStore from './store/store';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import * as ModalActions from './actions/modal_actions';
+import * as ItemActions from './actions/item_actions';
+import {getItems} from './util/item_api_util';
+
+const store = configureStore();
+
+ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+
+window.store = store;
 window.axios = axios;
+window.reqItems = getItems;
+window.ItemActions = ItemActions;
+window.ModalActions = ModalActions;
+
 
 // axios.get("/api/items").then(res => console.log(res.data))
+// reqItems().then(res => console.log(res), err => {console.log(err); return err})
+
