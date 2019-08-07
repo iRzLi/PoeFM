@@ -46,10 +46,11 @@ class Splash extends React.Component {
             return (
                 <>
                     <div className="title">PoeFM</div>
-                    <Navbar />
-                    <ul>
-                        {temp}
-                    </ul>
+                            <Navbar />
+                            <ul>
+                                {temp}
+                            </ul>
+                    
                 </>
             )
         }
