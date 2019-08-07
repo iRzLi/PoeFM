@@ -2,6 +2,11 @@
     width: 64px;
     height: 64px;
     font-size: 64px;
+    animation: spin 1.8s linear infinite;
 }
 
 /* add keyframes */
+
+@keyframes spin {
+  to {transform: rotate(360deg);}
+}

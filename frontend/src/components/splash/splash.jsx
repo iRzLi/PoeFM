@@ -10,6 +10,7 @@ class Splash extends React.Component {
             items: null,
             stats: null,
             static_drops: null,
+            leagues: null,
         };
     }
 
@@ -23,15 +24,18 @@ class Splash extends React.Component {
         this.props.getStaticDrops().then(res => {
             this.setState({ static_drops: true })
         });
+        this.props.getLeagues().then(res => {
+            this.setState({ leagues: true })
+        });
     }
 
     render(){
-        let {items, stats, static_drops} = this.state;
-        if(items===null || stats === null || static_drops === null){
+        let {items, stats, static_drops, leagues} = this.state;
+        if (items === null || stats === null || static_drops === null || leagues === null){
             return(
                 <div className="modal-background">
                     <div className="modal-child">
-                        <div>Loading</div>
+                        <Buffer color={"#ffffff"} />
                     </div>
                 </div>
             )
@@ -39,7 +43,6 @@ class Splash extends React.Component {
             return (
                 <>
                     <div>Hello from Splash</div>
-                    <Buffer />
                 </>
             )
         }

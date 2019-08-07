@@ -11,6 +11,8 @@ router.get("/", (req, res) => {
                 stats[element.label] = element.entries;
             });
             return res.json(stats);
+        }else {
+            return res.status(400).json({ stats: 'Oopsie' });
         }
     });
     // return res.json(items);
