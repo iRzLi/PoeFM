@@ -1,0 +1,49 @@
+.league {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* margin: 0px 10px; */
+    justify-content: space-between;
+    min-width: 150px;
+    border-left: 1px solid #E0E0E0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.league:hover {
+    background-color: #E0E0E0;
+}
+
+.leagueName {
+    margin-right: 5px;
+    text-align: right;
+}
+
+.caretDown {
+    font-size: 16px;
+    padding: 0px 2px;
+    /* cursor: pointer; */
+}
+
+/* .caretDown:hover {
+    background-color: #E0E0E0;
+    border-radius: 4px;
+} */
+
+.dropDown {
+    border: 1px solid #E0E0E0;
+    position: absolute;
+    top: 37px;
+    right: -1px;
+    white-space: nowrap;
+    min-width: 130px;
+}
+
+.leagueLi{
+    min-width: 150px;
+    padding: 10px;
+}
+
+.leagueLi:hover {
+    background-color: #E0E0E0;
+}

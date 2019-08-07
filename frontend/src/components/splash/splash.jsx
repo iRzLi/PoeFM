@@ -1,7 +1,7 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCog } from '@fortawesome/free-solid-svg-icons'
 import Buffer from '../buffer/buffer';
+import Navbar from '../navbar/navbar';
+import './splash.css';
 
 class Splash extends React.Component {
     constructor(props){
@@ -40,9 +40,16 @@ class Splash extends React.Component {
                 </div>
             )
         }else {
+            let temp = Array(100).fill().map((_, i) => {
+                return <li key={i}> Hello{i}</li>
+            });
             return (
                 <>
-                    <div>Hello from Splash</div>
+                    <div className="title">PoeFM</div>
+                    <Navbar />
+                    <ul>
+                        {temp}
+                    </ul>
                 </>
             )
         }

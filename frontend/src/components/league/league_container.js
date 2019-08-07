@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { selectLeague } from '../../actions/league_actions';
-import Modal from './modal';
+import League from './league';
 
 
 const msp = state => {
@@ -16,4 +16,4 @@ const mdp = dispatch => {
     };
 };
 
-export default connect(msp, mdp)(Modal);
+export default connect(msp, mdp)(League);

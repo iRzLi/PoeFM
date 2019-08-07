@@ -21,5 +21,8 @@ window.ModalActions = ModalActions;
 
 
 // axios.get("/api/items").then(res => console.log(res.data))
-// reqItems().then(res => console.log(res), err => {console.log(err); return err})
+// window.reqItems().then(res => console.log(res)).catch(err => {
+//     debugger
+//     console.log(err);
+//      return err})
 

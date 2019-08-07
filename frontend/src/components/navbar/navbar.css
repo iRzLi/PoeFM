@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #E0E0E0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #fafafa;
+}
