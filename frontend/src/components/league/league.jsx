@@ -11,8 +11,9 @@ class League extends React.Component{
         }
         this.timer = null;
         this.alterDropdown = this.alterDropdown.bind(this);
-        this.mouseLeaveTimer = this.mouseLeaveTimer.bind(this);
-        this.mouseEnterTime = this.mouseEnterTime.bind(this);
+        // this.mouseLeaveTimer = this.mouseLeaveTimer.bind(this);
+        // this.mouseEnterTime = this.mouseEnterTime.bind(this);
+        this.mouseLeaveEvent = this.mouseLeaveEvent.bind(this);
         this.changeLeague = this.changeLeague.bind(this);
     }
 
@@ -23,16 +24,23 @@ class League extends React.Component{
         }
     }
 
-    mouseLeaveTimer(e){
-        e.preventDefault();
-        this.timer = setTimeout(()=>{
-            this.setState({ dropdown: false })
-        },1000)
-    }
+    // mouseLeaveTimer(e){
+    //     e.preventDefault();
+    //     this.timer = setTimeout(()=>{
+    //         this.setState({ dropdown: false })
+    //     },1000)
+    // }
 
-    mouseEnterTime(e){
+    // mouseEnterTime(e){
+    //     e.preventDefault();
+    //     clearTimeout(this.timer);
+    // }
+
+    mouseLeaveEvent(e){
         e.preventDefault();
-        clearTimeout(this.timer);
+        if(this.state.dropdown===true){
+            this.setState({ dropdown:false })
+        }
     }
 
     changeLeague(leagueName){
@@ -56,7 +64,7 @@ class League extends React.Component{
             caret = <FontAwesomeIcon icon={faAngleUp} />
 
             dropDownBox = (
-                <div onMouseLeave={this.mouseLeaveTimer} onMouseEnter={this.mouseEnterTime} className="dropDown">
+                <div className="dropDown">
                     <ul>
                         {leagueList}
                     </ul>
@@ -64,7 +72,7 @@ class League extends React.Component{
         }
 
         return (
-            <div className="league" onClick={this.alterDropdown}>
+            <div className="league" onClick={this.alterDropdown} onMouseLeave={this.mouseLeaveEvent}>
                 <div className="leagueName">{this.props.league} </div>
                 <div className="caretDown" >{caret}</div>
                 {dropDownBox}

@@ -5,15 +5,20 @@
     margin: 5px 10px;
     justify-content: space-between;
     min-width: 150px;
-    border: 1px solid #000000;
+    border: 1px solid #dfe6e9;
     padding: 10px;
     cursor: pointer;
-    background-color: #1e2124;
+    /* background-color: #1e2124; */
+    background-color: #636e72;
 }
 
 .league:hover {
-    background-color: #46525f;
+    background-color: #353849;
 }
+
+/* .league:focus .dropDown{
+    display: block;
+} */
 
 .leagueName {
     margin-right: 5px;
@@ -32,13 +37,13 @@
 } */
 
 .dropDown {
-    border: 1px solid #000000;
+    border: 1px solid #dfe6e9;
     position: absolute;
     top: 37px;
     right: -1px;
     white-space: nowrap;
     min-width: 130px;
-    background-color: #1e2124;
+    background-color: #353849;
 }
 
 .leagueLi{
@@ -47,5 +52,5 @@
 }
 
 .leagueLi:hover {
-    background-color: #46525f;
+    background-color: #636e72;
 }
