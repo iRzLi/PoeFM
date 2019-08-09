@@ -11,6 +11,17 @@ app.use("/api/stats", stats);
 app.use("/api/static", static);
 app.use("/api/leagues", leagues);
 
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+const startServer = async () => {
+    await new Promise((resolve, reject) => {
+        const port = process.env.PORT || 5000;
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+            resolve()
+        }).on("error", ()=> {
+            console.log(`Server failed to start`);
+            reject();
+        })
+    });
+}
+startServer();
+// app.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -1,7 +1,7 @@
 import { SELECT_LEAGUES } from '../actions/league_actions';
 
 
-const leaguesReducer = (state = "Standard", action) => {
+const uiLeaguesReducer = (state = "Standard", action) => {
     const oldState = Object.freeze(state);
     switch (action.type) {
         case SELECT_LEAGUES:
@@ -11,4 +11,4 @@ const leaguesReducer = (state = "Standard", action) => {
     }
 };
 
-export default leaguesReducer;
+export default uiLeaguesReducer;

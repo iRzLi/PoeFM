@@ -1,0 +1,22 @@
+.searchInput {
+    background-color: #636e72;
+    border: 1px solid #dfe6e9;
+    outline: none;
+    color: #dfe6e9;
+    padding: 7.5px 0px 7.5px;
+    font-size: 18px;
+    width: 100%;
+    text-indent: 8px;
+}
+
+.searchInput::placeholder {
+    color: #dfe6e9;
+}
+
+.searchInput:focus {
+    background-color: #353849;
+}
+
+.searchContainer {
+    width: 100vw;
+}
