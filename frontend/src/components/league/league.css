@@ -25,7 +25,7 @@
 .leagueName {
     margin-right: 5px;
     text-align: right;
-    white-space: nowrap; 
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -69,7 +69,6 @@
   .dropDown {
     min-width: 480px;
     max-width: 480px;
-    /* right: 9px; */
 }
 
 }

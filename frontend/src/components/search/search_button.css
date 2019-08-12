@@ -9,4 +9,9 @@
     width: 400px;
     min-width: 100px;
     text-indent: 8px;
+    margin: 5px 0px;
+}
+
+.searchButton:hover {
+    background-color: #353849;
 }
