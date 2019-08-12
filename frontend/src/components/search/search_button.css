@@ -1,0 +1,12 @@
+.searchButton {
+    cursor: pointer;
+    background-color: #636e72;
+    border: 1px solid #dfe6e9;
+    outline: none;
+    color: #dfe6e9;
+    padding: 7.5px 0px 7.5px;
+    font-size: 18px;
+    width: 400px;
+    min-width: 100px;
+    text-indent: 8px;
+}

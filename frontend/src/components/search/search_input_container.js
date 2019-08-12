@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { updateSearchString } from '../../actions/search_actions';
-import Search from './search';
+import SearchInput from './search_input';
 
 const mapStateToProps = state => {
     return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchInput);
