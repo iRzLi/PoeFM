@@ -2,6 +2,7 @@ import React from 'react';
 import Buffer from '../buffer/buffer';
 import Navbar from '../navbar/navbar';
 import './splash.css';
+import SearchItemsContainer from '../search/search_items_container';
 
 class Splash extends React.Component {
     constructor(props){
@@ -47,6 +48,8 @@ class Splash extends React.Component {
                 <>
                     <div className="title">PoeFM</div>
                     <Navbar />
+                    <SearchItemsContainer />
+                    <br/><br/><br/>
                     <ul>
                         {temp}
                     </ul>

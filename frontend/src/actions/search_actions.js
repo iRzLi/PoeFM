@@ -6,3 +6,4 @@ export const updateSearchString = (searchString) => {
         searchString,
     };
 };
+

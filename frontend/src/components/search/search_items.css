@@ -1,0 +1,7 @@
+.showingText{
+    padding: 5px;
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 104px;
+}
