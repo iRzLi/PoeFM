@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-// import { updateSearchString } from '../../actions/search_actions';
+import { ApplytItemKeys } from '../../actions/item_key_actions';
 import searchItems from './search_items';
 
 const mapStateToProps = state => {
@@ -9,10 +9,10 @@ const mapStateToProps = state => {
     };
 };
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         updateSearchString: (searchItemsObj) => dispatch(updateSearchString(searchString))
-//     };
-// };
+const mapDispatchToProps = dispatch => {
+    return {
+        ApplytItemKeys: (itemKeysObj, offset) => dispatch(ApplytItemKeys(itemKeysObj, offset))
+    };
+};
 
-export default connect(mapStateToProps, null)(searchItems);
+export default connect(mapStateToProps, mapDispatchToProps)(searchItems);

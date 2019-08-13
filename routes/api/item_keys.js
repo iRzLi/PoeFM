@@ -25,20 +25,20 @@ router.post("/", (req, res) => {
         }
     };
 
-    if (req.body.searchObj.item.name){
+    if (req.body.searchObj.item.name) {
         params.query["name"] = req.body.searchObj.item.name;
     }
 
     if (req.body.searchObj.item.type) {
         params.query["type"] = req.body.searchObj.item.type;
     }
-    
+
     let url = `https://www.pathofexile.com/api/trade/search/${req.body.searchObj.league}`;
     // debugger
-    request.post({ url: url, json: params}, (err, resp, body) => {
+    request.post({ url: url, json: params }, (err, resp, body) => {
         if (!err && resp.statusCode == 200) {
             // debugger
-            return res.json({searchItems: body});
+            return res.json({ searchItems: body });
         } else {
             return res.status(400).json({ items: 'Oopsie' });
             // throw new Error('BROKEN')
@@ -51,23 +51,18 @@ router.post("/getItems", (req, res) => {
     // https://www.pathofexile.com/api/trade/fetch/{array.join(",")}
     // ?query=NK6Ec5
     // req.body.itemKeyObj.result.slice(0, 10).join(",")
-    let begin = (req.body.offset - 1)*10;
-    let end = req.body.offset*10;
-    let fetchString = req.body.itemKeyObj.result.slice(begin,end).join(",");
+    let begin = (req.body.offset - 1) * 10;
+    let end = req.body.offset * 10;
+    let fetchString = req.body.itemKeyObj.result.slice(begin, end).join(",");
     let query = "?query" + req.body.itemKeyObj.id
     let url = "https://www.pathofexile.com/api/trade/fetch/" + fetchString + query;
-    
+
     request(url, (err, resp, body) => {
         if (!err && resp.statusCode == 200) {
-            // JSON.parse(body)
-            // JSON.parse(body)["result"].forEach(element => {
-            //     items[element.label] = element.entries;
-            // });
-            debugger
+            // debugger
             return res.json(JSON.parse(body));
         } else {
             return res.status(400).json({ items: 'Oopsie' });
-            // throw new Error('BROKEN')
         }
     });
 });

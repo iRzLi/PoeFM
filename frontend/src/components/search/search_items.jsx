@@ -1,9 +1,8 @@
 import React from 'react';
 import './search_items.css';
-import { getItems } from '../../util/search_api_util'
 
 const SearchItems = (props) => {
-    console.log(props.itemKeys);
+    // console.log(props.itemKeys);
     // debugger
     if (Object.keys(props.itemKeys).length){
 
@@ -15,7 +14,7 @@ const SearchItems = (props) => {
         if (props.itemKeys.inexact){
             max+= " + "
         }
-        getItems(props.itemKeys, props.offset);
+        props.ApplytItemKeys(props.itemKeys, props.offset);
 
         return (
             <div className="showingText">Showing {shown} of {props.itemKeys.result.length} from {max}</div>
