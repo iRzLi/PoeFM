@@ -65,6 +65,14 @@ class SearchItems extends React.Component {
         this.state = {
             offset: 1,
         }
+        this.scrollingCall = this.scrollingCall.bind(this);
+    }
+
+    scrollingCall = () => {
+        if (window.scrollY > 200) {
+            // console.log(this.state.offset)
+            this.setState({ offset: this.state.offset + 1 }, () => console.log(this.state.offset))
+        }
     }
 
     componentDidUpdate(prevProps){
@@ -73,14 +81,27 @@ class SearchItems extends React.Component {
             if(Object.keys(this.props.itemKeys.result).length) {
                 this.props.ApplytItemKeys(this.props.itemKeys, this.state.offset);
                 // debugger
+                document.addEventListener("scroll", this.scrollingCall);
             }
         } else if (prevProps.itemKeys.id !== this.props.itemKeys.id &&
-             (Object.keys(this.props.itemKeys.result).length < (this.stateoffset - 1) * 10)){
+             (Object.keys(this.props.itemKeys.result).length > (this.state.offset - 1) * 10)){
             this.setState({ offset: 1 }, () => this.props.ApplytItemKeys(this.props.itemKeys, this.state.offset))
-        } else if ((Object.keys(this.props.itemKeys.result).length < (this.stateoffset-1)*10) &&
+            // debugger
+            // add scroll event listener
+            document.addEventListener("scroll", this.scrollingCall);
+
+        } else if ((Object.keys(this.props.itemKeys.result).length) > (this.state.offset-1)*10 &&
          this.state.offset <= 10){
             this.props.ApplytItemKeys(this.props.itemKeys, this.state.offset)
+
+            // debugger
+            if(Object.keys(this.props.itemKeys.result).length <= this.state.offset * 10){
+                //remove scroll event listener
+                // debugger
+                document.removeEventListener("scroll", this.scrollingCall)
+            }
         }
+
     }
 
     render(){
