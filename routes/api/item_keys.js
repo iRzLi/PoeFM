@@ -51,6 +51,7 @@ router.post("/getItems", (req, res) => {
     // https://www.pathofexile.com/api/trade/fetch/{array.join(",")}
     // ?query=NK6Ec5
     // req.body.itemKeyObj.result.slice(0, 10).join(",")
+    // debugger
     let begin = (req.body.offset - 1) * 10;
     let end = req.body.offset * 10;
     let fetchString = req.body.itemKeyObj.result.slice(begin, end).join(",");
