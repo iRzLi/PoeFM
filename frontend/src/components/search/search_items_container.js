@@ -7,6 +7,7 @@ const mapStateToProps = state => {
     return {
         // offset: state.ui.offset,
         itemKeys: state.entities.item_keys,
+        league: state.ui.league,
     };
 };
 

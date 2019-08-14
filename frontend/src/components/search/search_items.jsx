@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useState, useEffect } from 'react';
 import './search_items.css';
-
+import ItemListingContainer from '../item/item_listing_container';
 
 // const SearchItems = (props) => {
 
@@ -90,7 +90,8 @@ class SearchItems extends React.Component {
             // add scroll event listener
             document.addEventListener("scroll", this.scrollingCall);
 
-        } else if ((Object.keys(this.props.itemKeys.result).length) > (this.state.offset-1)*10 &&
+        } else if (prevProps.league === this.props.league && 
+            (Object.keys(this.props.itemKeys.result).length) > (this.state.offset-1)*10 &&
          this.state.offset <= 10){
             this.props.ApplytItemKeys(this.props.itemKeys, this.state.offset)
 
@@ -100,12 +101,20 @@ class SearchItems extends React.Component {
                 // debugger
                 document.removeEventListener("scroll", this.scrollingCall)
             }
+        } else if (prevProps.league !== this.props.league && 
+            prevProps.itemKeys.id === this.props.itemKeys.id ){
+                debugger
+                // make it research instead
+                // inside another component
+                // this is what happens if youve searched and then change league
+            document.removeEventListener("scroll", this.scrollingCall);
         }
 
     }
 
     render(){
         let string = null;
+        let itemListingContainer = null;
         if (Object.keys(this.props.itemKeys).length){
             if (Object.keys(this.props.itemKeys.result).length) {
                 let shown = Math.min(this.state.offset * 10, this.props.itemKeys.result.length)
@@ -114,6 +123,7 @@ class SearchItems extends React.Component {
                     max += " + "
                 }
                 string = `Showing ${ shown } of ${ this.props.itemKeys.result.length } from ${ max }`
+                itemListingContainer = <ItemListingContainer />
             }else {
                 string = "No results found"
             }
@@ -122,7 +132,10 @@ class SearchItems extends React.Component {
 
 
         return (
-            <div className="showingText">{string}</div>
+            <React.Fragment>
+                <div className="showingText">{string}</div>
+                {itemListingContainer}
+            </React.Fragment>
         )
     }
 
