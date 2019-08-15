@@ -5,3 +5,7 @@
     text-align: center;
     padding: 10px;
 }
+
+.itemsBackground {
+    background-color: rgba(0, 0, 0, .2)
+}

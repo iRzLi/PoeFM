@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemContainer from './item_container';
+import './item_listing.css'
 
 const ItemListing = (props) => {
     let items = null;
@@ -8,7 +9,11 @@ const ItemListing = (props) => {
         return <ItemContainer key={i} item={item} />
     });
     return (
-        <div>{items}</div>
+        <div className="itemsListingContainer">
+            <div className="itemsListing">
+                {items}
+            </div>
+        </div>
     )
 }
 

@@ -69,7 +69,12 @@ class SearchItems extends React.Component {
     }
 
     scrollingCall = () => {
-        if (window.scrollY > 200) {
+        // console.log(window.scrollY + window.screenTop , (this.state.offset * 10 - 1) * 200)
+        let extra = 0;
+        if (this.state.offset<=2){
+            extra = (200 / this.state.offset);
+        }
+        if (window.scrollY + window.screenTop + extra > (this.state.offset*10-1)*200) {
             // console.log(this.state.offset)
             this.setState({ offset: this.state.offset + 1 }, () => console.log(this.state.offset))
         }
@@ -77,6 +82,10 @@ class SearchItems extends React.Component {
 
     componentDidUpdate(prevProps){
         // debugger
+        if(prevProps.offset===1 && this.props.offset===0){
+            this.setState({ offset: 1 });
+        }
+
         if (Object.keys(prevProps.itemKeys).length === 0){
             if(Object.keys(this.props.itemKeys.result).length) {
                 this.props.ApplytItemKeys(this.props.itemKeys, this.state.offset);
@@ -103,7 +112,7 @@ class SearchItems extends React.Component {
             }
         } else if (prevProps.league !== this.props.league && 
             prevProps.itemKeys.id === this.props.itemKeys.id ){
-                debugger
+                // debugger
                 // make it research instead
                 // inside another component
                 // this is what happens if youve searched and then change league

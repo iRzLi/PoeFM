@@ -5,7 +5,7 @@ import searchItems from './search_items';
 
 const mapStateToProps = state => {
     return {
-        // offset: state.ui.offset,
+        offset: state.ui.offset,
         itemKeys: state.entities.item_keys,
         league: state.ui.league,
     };

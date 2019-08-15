@@ -76,6 +76,9 @@ class Search extends React.Component {
                         if(items[currentType][i].name.toLowerCase().includes(this.props.searchString.toLowerCase())) {
                             results[currentType].name.push(items[currentType][i]);
                             counter++;
+                        } else if (items[currentType][i].type.toLowerCase().includes(this.props.searchString.toLowerCase())) {
+                            results[currentType].name.push(items[currentType][i]);
+                            counter++;
                         }
                     }else {
                         if (items[currentType][i].type.toLowerCase().includes(this.props.searchString.toLowerCase())) {

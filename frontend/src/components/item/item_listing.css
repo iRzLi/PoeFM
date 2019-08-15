@@ -1,0 +1,11 @@
+.itemsListingContainer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.itemsListing{
+    width: 90vw;
+    /* background-image: linear-gradient(to top,#111111 , #2d3436); */
+    /* background-color: rgba(0, 0, 0, .4) */
+}

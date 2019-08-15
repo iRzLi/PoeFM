@@ -1,0 +1,12 @@
+.itemContainer {
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+}
+
+.itemShowCase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}

@@ -41,18 +41,20 @@ class Splash extends React.Component {
                 </div>
             )
         }else {
-            let temp = Array(100).fill().map((_, i) => {
-                return <li key={i}> Hello{i}</li>
-            });
+            // let temp = Array(100).fill().map((_, i) => {
+            //     return <li key={i}> Hello{i}</li>
+            // });
             return (
                 <>
                     <div className="title">PoeFM</div>
-                    <Navbar />
-                    <SearchItemsContainer />
+                        <Navbar />
+                    <div className="itemsBackground">
+                        <SearchItemsContainer />
+                    </div>
                     <br/><br/><br/>
-                    <ul>
+                    {/* <ul>
                         {temp}
-                    </ul>
+                    </ul> */}
                     
                 </>
             )
